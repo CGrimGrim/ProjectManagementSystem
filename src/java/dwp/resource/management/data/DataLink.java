@@ -80,4 +80,10 @@ public class DataLink {
         return callstat.executeQuery();
     }
     
+    public ResultSet getProject(int projectID) throws SQLException{
+        callstat = connect.prepareCall("Call searchProjectByID(?)");
+        callstat.setInt(1, projectID);
+        return callstat.executeQuery();
+    }
+    
 }

@@ -106,3 +106,10 @@ button {
 	font-size: 30px;
 	color:GREY;
 }
+
+img {
+	
+	width: 100%;
+	opacity: 0.2;
+	z-index: 2;
+}
