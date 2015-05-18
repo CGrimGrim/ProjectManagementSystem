@@ -100,5 +100,6 @@
 	</form></li>
 </ul>
 </nav>
+<img src="dwp-logo.jpg">
 </body>
 </html>
