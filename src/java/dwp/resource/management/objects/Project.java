@@ -15,17 +15,17 @@ public class Project {
     
     private int projectID;
     private String name;
-    private int totalHours;
-    private String locationID;
+    private double totalHours;
+    private String locationName;
     private String phase;
     private LocalDate startDate;
     private LocalDate endDate;
     
-    public Project(int projID, String name, int totalHours, String locationID, String phase, LocalDate startDate, LocalDate endDate){
+    public Project(int projID, String name, double totalHours, String locationID, String phase, LocalDate startDate, LocalDate endDate){
         projectID = projID;
         this.name = name;
         this.totalHours = totalHours;
-        this.locationID = locationID;
+        this.locationName = locationID;
         this.phase = phase;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -62,29 +62,29 @@ public class Project {
     /**
      * @return the projectTotalHours
      */
-    public int getTotalHours() {
+    public double getTotalHours() {
         return totalHours;
     }
 
     /**
      * @param totalHours the projectTotalHours to set
      */
-    public void setTotalHours(int totalHours) {
+    public void setTotalHours(double totalHours) {
         this.totalHours = totalHours;
     }
 
     /**
-     * @return the locationID
+     * @return the locationName
      */
-    public String getLocationID() {
-        return locationID;
+    public String getLocationName() {
+        return locationName;
     }
 
     /**
-     * @param locationID the locationID to set
+     * @param LocationName the locationName to set
      */
-    public void setLocationID(String locationID) {
-        this.locationID = locationID;
+    public void setLocationName(String LocationName) {
+        this.locationName = LocationName;
     }
 
     /**

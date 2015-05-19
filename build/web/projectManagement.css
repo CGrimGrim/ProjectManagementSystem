@@ -7,6 +7,7 @@ header{
 	height: 60px;
 	margin-top: 0px;
 	margin-bottom: 10px;
+	width: 190ex;
 }
 
 h1 {
@@ -109,7 +110,21 @@ button {
 
 img {
 	
-	width: 100%;
+	width: 190ex;
 	opacity: 0.2;
 	z-index: 2;
+	margin-top: 60px;
+}
+
+
+.errorMessage{
+    color: #AF1324;
+}
+
+.mandatoryField{
+   
+}
+
+.hidden{
+    color: white;
 }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
+    <head>
 <title>Menu</title>
 <link rel="stylesheet" type = "text/css" href="projectManagement.css">
 <link rel="stylesheet" type="text/css" href="dropDown.css">
@@ -65,7 +64,7 @@
 	<li><a href="newProject.jsp">Add New Project</a></li>
 	<li><a href="">Delete A Project</a>
 	<ul>
-		<li><form class="dropDown" action="deleteProject.jsp">
+		<li><form class="dropDown" action="deleteProject" method="Get">
 		Please Enter The Project ID:
 		<input type="text" name="projectID">
 		<input type="submit" value="Submit">

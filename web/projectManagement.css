@@ -115,3 +115,16 @@ img {
 	z-index: 2;
 	margin-top: 60px;
 }
+
+
+.errorMessage{
+    color: #AF1324;
+}
+
+.mandatoryField{
+   
+}
+
+.hidden{
+    color: white;
+}

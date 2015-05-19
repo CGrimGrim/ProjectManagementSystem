@@ -1,3 +1,4 @@
+<%@page import="dwp.resource.management.objects.Project"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,15 +103,39 @@
 </nav>
 <br>
 <br>
+<form action="deleteProject" method="Post">
 <table class="RemoveTablestyle">
-<tr>
-	<td>1:</td>
-	<td>Asset Management -</td>
-	<td>Birchwood</td>
-</tr>
+    <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Total staff hours</th>
+    <th>Location</th>
+    <th>Start date</th>
+    <th>End date</th>
+    </thead>
+    <tbody>
+        <%
+            if(request.getAttribute("projectToDelete") == null){
+               out.println("<tr><td colspan=5>No Project found</td></tr>");
+            }
+            else{
+                Project p = (Project)request.getAttribute("projectToDelete");
+                out.println("<tr>"
+                        + "<td>" + p.getProjectID() + "</td>"
+                        + "<td>" + p.getName() + "</td>"
+                        + "<td>" + p.getTotalHours() + "</td>"
+                        + "<td>" + p.getLocationName() + "</td>"
+                        + "<td>" + p.getStartDate() + "</td>"
+                        + "<td>" + p.getEndDate() + "</td>"
+                        + "</tr>");
+             out.println("<input type=hidden value="+ p.getProjectID()+" name=projectID");
+            }
+           
+    %>
+    </tbody>
 </table>
-<br>
-<button class="delete" onClick="#">Delete Project</button>
+    <input type="submit" value="Delete">
+</form>
 <br>
 <br>
 <br>

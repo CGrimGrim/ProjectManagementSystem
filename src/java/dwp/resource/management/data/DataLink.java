@@ -28,11 +28,12 @@ public class DataLink {
     	callstat = connect.prepareCall("call addProject(?,?,?,?,?,?,?)");
     	callstat.setInt(1, p.getProjectID());
     	callstat.setString(2, p.getName());
-    	callstat.setInt(3, p.getTotalHours());
-    	callstat.setString(4, p.getLocationID());
+    	callstat.setDouble(3, p.getTotalHours());
+    	callstat.setString(4, p.getLocationName());
     	callstat.setString(5, p.getPhase());
     	callstat.setDate(6, Date.valueOf(p.getStartDate()));
     	callstat.setDate(7, Date.valueOf(p.getEndDate()));
+        callstat.execute();
     }
            
     public void deleteEmployee(String id) throws SQLException{
@@ -84,6 +85,12 @@ public class DataLink {
         callstat = connect.prepareCall("Call searchProjectByID(?)");
         callstat.setInt(1, projectID);
         return callstat.executeQuery();
+    }
+
+    public void deleteProject(int projectID) throws SQLException{
+        callstat = connect.prepareCall("Call deleteProject(?)");
+        callstat.setInt(1, projectID);
+        callstat.executeQuery();
     }
     
 }

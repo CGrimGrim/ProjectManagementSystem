@@ -6,7 +6,6 @@
 package dwp.resource.management.servlet;
 
 import dwp.resource.management.data.DataLink;
-import dwp.resource.management.objects.User;
 import java.sql.ResultSet;
 import java.time.format.*;
 import java.time.*;
@@ -14,6 +13,8 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import dwp.resource.management.objects.*;
+import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  *
@@ -37,38 +38,45 @@ public class DeleteProjectController extends HttpServlet {
      @Override
      public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException{
          try{
-             String reqParameter = req.getParameter("staffID");
-             int employeeID = Integer.parseInt(reqParameter);
-             ResultSet rs = dl.getEmployee(employeeID);
+             String reqParameter = req.getParameter("projectID");
+             int projectID = Integer.parseInt(reqParameter);
+             ResultSet rs = dl.getProject(projectID);
              if(!rs.isBeforeFirst()){
                  req.setAttribute("result", false);
              }
              else{
                  rs.next();
-                 LocalDate startDate = rs.getDate(4).toLocalDate();
-                 LocalDate endDate = rs.getDate(5).toLocalDate();
-                 Employee employeeToDelete = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), startDate, endDate, rs.getString(6), rs.getString(7), rs.getDouble(8));
-                 req.setAttribute("employeeToDelete", employeeToDelete);
+                 Project projectToDelete = new Project(projectID, rs.getString(2), rs.getDouble(3), rs.getString(4), rs.getString(5), rs.getDate(6).toLocalDate(), rs.getDate(7).toLocalDate());
+                 req.setAttribute("projectToDelete", projectToDelete); 
              }
-             
-             req.getRequestDispatcher("deleteStaff.jsp").forward(req,res);
+             req.getRequestDispatcher("deleteProject.jsp").forward(req,res);
          }
          catch(Exception e){
              System.out.println("Exception: " + e.getMessage());
              System.out.println("Exception: " + e.getStackTrace()[0]);
+             System.out.println("Exception: " + e.getStackTrace()[1]);
          }
      }
      
      @Override
-     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException{
+     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
          try{
-            String e = req.getParameter("staffID");
-            dl.deleteEmployee(e);
+            int e = Integer.parseInt(req.getParameter("projectID"));
+            dl.deleteProject(e);
             req.setAttribute("successful", true);
-            req.getRequestDispatcher("deleteStaff.jsp").forward(req,res);
+            req.getRequestDispatcher("deleteProject.jsp").forward(req,res);
             
         }
+        catch(SQLException e){
+            int errorCode  = e.getErrorCode();
+            if(errorCode == 547){
+                req.setAttribute("successful", false);
+                req.setAttribute("Error Msg", "Cannot delete project that has staff assigned to it");
+                req.getRequestDispatcher("deleteProject.jsp").forward(req,res);
+            }
+        }
         catch(Exception e){
+            
             System.out.println("Exception: " + e.getMessage());
             System.out.println("Exception: " + e.getStackTrace()[0] + e.getStackTrace()[1]);
         }

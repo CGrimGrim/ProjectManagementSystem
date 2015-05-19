@@ -3,14 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Development/ProjectManagementSystem/src/java/dwp/resource/management/servlet/AddProjectController.java</file>
             <file>file:/C:/Development/ProjectManagementSystem/src/java/dwp/resource/management/data/DataLink.java</file>
-            <file>file:/C:/Development/ProjectManagementSystem/src/java/dwp/resource/management/servlet/AddEmployeeController.java</file>
-            <file>file:/C:/Development/ProjectManagementSystem/web/index.jsp</file>
-            <file>file:/C:/Development/ProjectManagementSystem/src/java/dwp/resource/management/servlet/AuthorisationController.java</file>
-            <file>file:/C:/Development/ProjectManagementSystem/web/newProject.jsp</file>
+            <file>file:/C:/Development/ProjectManagementSystem/src/java/dwp/resource/management/servlet/DeleteProjectController.java</file>
             <file>file:/C:/Development/ProjectManagementSystem/web/deleteStaff.jsp</file>
-            <file>file:/C:/Development/ProjectManagementSystem/src/java/dwp/resource/management/objects/Employee.java</file>
             <file>file:/C:/Development/ProjectManagementSystem/src/java/dwp/resource/management/servlet/DeleteEmployeeController.java</file>
         </group>
     </open-files>
