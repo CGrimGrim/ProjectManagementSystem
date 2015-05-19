@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dwp.resource.management.objects.Project"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,15 +115,29 @@
 	<th>Start Date</th>
 	<th>End Date</th>
 </tr>
-<tr>
-	<td>1</td>
-	<td contenteditable='true'>Asset Manager</td>
-	<td contenteditable='true'>120</td>
-	<td contenteditable='true'>Birchwood</td>
-	<td contenteditable='true'>Alpha</td>
-	<td contenteditable='true'>10/04/2015</td>
-	<td contenteditable='true'>19/07/2015</td>
-</tr>
+<%
+    if(request.getAttribute("projectToUpdate") == null){
+        out.println("<tr><td colspan=7>No project found</td></tr>");
+    }
+    else{
+        Project p = (Project)request.getAttribute("projectToUpdate");
+        ArrayList<Location> locations = (ArrayList<Location>)request.getAttribute("locations");
+        String locationDropDown = "<select>";
+        for(Location l : locations){
+            locationDropDown += "<option value="+l.getId()+">"+l.getName()+"</option>";
+        }
+        locationDropDown += "</select>";
+        out.println("<tr>"
+                +"<td></td>"  //projectID
+                +"<td></td>"  //Project Name
+                +"<td></td>"  //Total hours
+                +"<td>"+locationDropDown+"</td>"  //Location
+                +"<td></td>"  // Phase
+                +"<td></td>"  // Start date
+                +"<td></td>"  // End date
+                +"</tr>");
+    }
+%>
 </table>
 <br>
 <br>

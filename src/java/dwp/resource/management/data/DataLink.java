@@ -27,7 +27,13 @@ public class DataLink {
         
     }
     
-      
+    
+    public ResultSet getProject(int projectID) throws SQLException{
+        callstat = connect.prepareCall("call searchProjectByID(?)");
+        callstat.setInt(1, projectID);
+        return callstat.executeQuery();
+    }
+    
     public void addProject(Project p) throws SQLException {
     	callstat = connect.prepareCall("call addProject(?,?,?,?,?,?,?)");
     	callstat.setInt(1, p.getProjectID());
@@ -85,7 +91,7 @@ public class DataLink {
         return callstat.executeQuery();
     }
     
-    public ResusltSet getAllStaff() throws SQLException{
+    public ResultSet getAllStaff() throws SQLException{
     	ResultSet rs = statement.executeQuery("SELECT * from employee");
     	return rs;
     }

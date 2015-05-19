@@ -65,6 +65,23 @@
         </init-param>
    </servlet>
    <servlet>
+       <servlet-name>GetAllStaffController</servlet-name>
+       <servlet-class>dwp.resource.management.servlet.GetAllStaffController</servlet-class>
+        <init-param>
+            <param-name>connectionString</param-name>
+            <param-value>jdbc:mysql://localhost:3306/pmsleeds</param-value>  
+       </init-param>
+        </init-param>
+          <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>  
+        </init-param>
+          <init-param>
+            <param-name>password</param-name>
+            <param-value></param-value>  
+        </init-param>
+   </servlet>
+   <servlet>
        <servlet-name>DeleteProjectController</servlet-name>
        <servlet-class>dwp.resource.management.servlet.DeleteProjectController</servlet-class>
         <init-param>
@@ -97,7 +114,12 @@
        <url-pattern>/addProject</url-pattern>
    </servlet-mapping>
    <servlet-mapping>
+<<<<<<< HEAD
+       <servlet-name>GetAllStaffController</servlet-name>
+       <url-pattern>/allStaff</url-pattern>
+=======
        <servlet-name>DeleteProjectController</servlet-name>
        <url-pattern>/deleteProject</url-pattern>
+>>>>>>> 1b514216901df361493a367b00894599effe32ae
    </servlet-mapping>
  </web-app>
