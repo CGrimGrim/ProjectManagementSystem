@@ -41,7 +41,6 @@ public class AddProjectController extends HttpServlet {
            dl.addProject(p);
            req.setAttribute("successful", true);
            req.getRequestDispatcher("newProject.jsp").forward(req,res);
-           
        }
        catch(Exception e){
            System.out.println("Exception: " + e.getMessage());

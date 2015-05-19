@@ -19,11 +19,18 @@ import dwp.resource.management.objects.*;
 
 
 public class AuthorisationController extends HttpServlet{
-     DataLink dl = null;
+    
+     DataLink dl;
+     String connectString;
+     String username;
+     String password;
      
      @Override
      public void init(ServletConfig sc) throws ServletException{
          try{
+             connectString = sc.getInitParameter("connectionString");
+             username = sc.getInitParameter("username");
+             password = sc.getInitParameter("password");
              dl = new DataLink(sc.getInitParameter("connectionString"), sc.getInitParameter("username"), sc.getInitParameter("password"));
          }
          catch(Exception e){
@@ -35,6 +42,7 @@ public class AuthorisationController extends HttpServlet{
      @Override
      public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException{
          try{
+             dl = new DataLink(connectString, username, password);
              ResultSet rs = dl.getUserInformation(req.getParameter("username"));
              if(!rs.isBeforeFirst()){
                  req.setAttribute("authenticated", false);

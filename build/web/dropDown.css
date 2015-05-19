@@ -3,7 +3,7 @@
 }
 
 .menu ul li:hover > ul {
-		display: block;
+	display: block;
 }
 
 .menu ul {
@@ -12,23 +12,35 @@
 	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
 	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
 	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-	padding: 0 0px;
 	border-radius: 10px;  
 	list-style: none;
 	position: relative;
 	display: inline-block;
-	width: 100%;
-	font-size: 22px;
+	width: 115ex;
+	height: 10%;
+	font-size: 160%;
+	z-index: 1;
+}
+
+.menu form {
+
+	font-size: 120%;
+	color:GREY;
+	padding-top: 21px;
+	padding-bottom: 21px;
 }
 
 .menu ul:after {
-		content: ""; clear: both; display: block;
+		content: ""; 
+		clear: both; 
+		display: block;
 }
 
 .menu ul li {
 	float: left;
-	padding: 10%, 10px, 10%, 10px;
+	margin-right: 1.5%;
 }
+
 
 .menu ul li:hover {
 		background: #4b545f;
@@ -42,14 +54,20 @@
 }
 	
 .menu ul li a {
-		display: block; padding: 25px 90px;
-		color: #757575; text-decoration: none;
+		display: block; 
+		padding: 25px 60px;
+		color: #757575; 
+		text-decoration: none;
 }
 
 .menu ul ul {
-	background: #5f6975; border-radius: 0px; padding: 0;
-	position: absolute; top: 100%;
+	background: #5f6975; 
+	border-radius: 0px; 
+	padding: 0;
+	position: absolute; 
+	top: 100%;
 	width: 25%;
+	height: auto;
 }
 
 .menu ul ul li {
@@ -70,15 +88,16 @@
 }
 
 .menu ul ul ul {
-	position: absolute; left: 100%; top:0;
+	position: absolute; 
+	left: 100%; 
+	top:0;
 	color: white;
 	width: 120%;
 }
 
 .dropDown {
 	
-	text-align: center;
-	font-size: 30px;
+	font-size: 120%;
 	color:WHITE;
 }
 

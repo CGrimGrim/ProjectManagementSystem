@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html {
 	font-family: arial;
 	
@@ -116,3 +117,135 @@ button {
 	font-size: 30px;
 	color:BLACK;
 }
+=======
+html{
+	background-image: url("http://trueclean4u.com/wp-content/uploads/2014/12/JOES-Website-Background-light-grey.jpg");
+}
+
+header{
+	
+	height: 60px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	width: 190ex;
+}
+
+h1 {
+	
+	font-size: 70px;
+	font-variant: small-caps;
+	color: GREY;
+	text-align: center;
+}
+
+h2 {
+	
+	font-size: 50px;
+	font-variant: small-caps;
+	color: GREY;
+	text-align: center;
+}
+
+.delete {
+	font-size: 25px;
+	font-variant: small-caps;
+	color: GREY;
+	text-align: center;
+	text-decoration: none;
+	float: left;
+	margin-left: 36.5%;
+}
+
+
+h3 {
+	
+	font-size: 30px;
+	font-variant: small-caps;
+	color: GREY;
+	text-align: left;
+	margin-left: 15%;
+}
+
+form {
+	
+	text-align: center;
+	font-size: 30px;
+	color:GREY;
+	padding-top: 21px;
+	padding-bottom: 21px;
+	padding-right: 21px;
+	padding-left: 5px;
+}
+
+th {
+	
+	color:GREY;
+	font-style: italic;
+	border-bottom: 1;
+	border-bottom-style: solid;
+	border-bottom-color: GREY;
+}
+
+td {
+	text-align: center;
+	color: GREY;
+	padding: 10px;
+}
+
+.tablestyle {
+	
+	border: 1;
+	border-style: solid;
+	border-color: GREY;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: sans-serif;
+	font-size: 20px;
+	font-weight:bold;
+
+}
+
+.RemoveTablestyle {
+	
+	margin-left: 20%;
+	font-family: sans-serif;
+	font-size: 30px;
+	font-weight:bold;
+	}
+
+button {
+	float: right;
+	padding: 10px;
+	margin-right: 13%;
+	color:Grey;
+	font-weight: bold;
+}	
+
+.forms {
+	text-align: center;
+	font-size: 30px;
+	color:GREY;
+}
+
+img {
+	
+	width: 190ex;
+	opacity: 0.2;
+	z-index: 2;
+	margin-top: 60px;
+}
+
+
+.errorMessage{
+    color: #AF1324;
+}
+
+.mandatoryField{
+   
+}
+
+.hidden{
+    color: white;
+}
+>>>>>>> 1b514216901df361493a367b00894599effe32ae
