@@ -11,16 +11,20 @@ package dwp.resource.management.data;
  * @author 10071639
  */
 import dwp.resource.management.objects.*;
+
 import java.sql.*;
 
 public class DataLink {
     
     private Connection connect = null;
     private CallableStatement callstat = null;
+    private Statement statement = null;
     
     public DataLink(String databaseLocation, String username, String password) throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.jdbc.Driver");
         connect = DriverManager.getConnection(databaseLocation, username, password);
+        statement = connect.createStatement();
+        
     }
     
       
@@ -78,6 +82,11 @@ public class DataLink {
         callstat = connect.prepareCall("call searchEmployeeByID(?)");
         callstat.setInt(1, employeeID);
         return callstat.executeQuery();
+    }
+    
+    public ResultSet getAllStaff() throws SQLException{
+    	ResultSet rs = statement.executeQuery("SELECT * from employee");
+    	return rs;
     }
     
 }

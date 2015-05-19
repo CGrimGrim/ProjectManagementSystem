@@ -10,6 +10,7 @@
 <header>
 <h1>Project Management System</h1>
 </header>
+<div class="split"><br></div>
 <nav class="menu">
 <ul>
 
@@ -17,7 +18,7 @@
 
 	<ul>
 	
-	<li><a href="allStaff.jsp">View All Staff Members</a></li>
+	<li><a href="allStaff">View All Staff Members</a></li>
 	
 	<li><a href="">Update Staff Members Details</a>
 		<ul>
@@ -100,6 +101,5 @@
 	</form></li>
 </ul>
 </nav>
-<img src="dwp-logo.jpg">
 </body>
 </html>

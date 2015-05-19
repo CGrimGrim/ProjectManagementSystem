@@ -1,3 +1,5 @@
+<%@page import="dwp.resource.management.objects.Employee"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +12,7 @@
 <header>
 <h2>All Staff</h2>
 </header>
+<div class="split"><br></div>
 <nav class="menu">
 <ul>
 
@@ -110,59 +113,31 @@
 	<th>Start Date</th>
 	<th>End Date</th>
 	<th>Contact Number</th>
-	<th>Job Type</th>
 	<th>Contract Type</th>
 	<th>Hours Per Week</th>
 	<th></th>
 </tr>
-<tr>
-	<td>1</td>
-	<td>Charlotte</td>
-	<td>Kirkby</td>
-	<td>16/09/2014</td>
-	<td>N/A</td>
-	<td>07254291742</td>
-	<td>Developer</td>
-	<td>Full Time</td>
-	<td>37.5</td>
-	<td><button onClick="location.href='assignStaff.jsp'">Assign to Project</button></td>
-</tr>
-<tr>
-	<td>2</td>
-	<td>Chris</td>
-	<td>Grimward</td>
-	<td>16/09/2014</td>
-	<td>N/A</td>
-	<td>07254291742</td>
-	<td>Developer</td>
-	<td>Full Time</td>
-	<td>37.5</td>
-	<td><button onClick="location.href='assignStaff.jsp'">Assign to Project</button></td>
-</tr>
-<tr>
-	<td>3</td>
-	<td>Jack</td>
-	<td>Denton</td>
-	<td>16/09/2014</td>
-	<td>N/A</td>
-	<td>07254291742</td>
-	<td>Developer</td>
-	<td>Full Time</td>
-	<td>37.5</td>
-	<td><button onClick="location.href='assignStaff.jsp'">Assign to Project</button></td>
-</tr>
-<tr>
-	<td>4</td>
-	<td>Feme</td>
-	<td>Adepetun</td>
-	<td>16/09/2014</td>
-	<td>N/A</td>
-	<td>07254291742</td>
-	<td>Developer</td>
-	<td>Full Time</td>
-	<td>37.5</td>
-	<td><button onClick="location.href='assignStaff.jsp'">Assign to Project</button></td>
-</tr>
+
+<%
+
+	List<Employee> allStaff = (List<Employee>)request.getAttribute("allStaff");
+	int i;
+	for (Employee e : allStaff) {	
+		out.println("<tr>"
+                + "<td>" + e.getEmployeeID() + "</td>"
+                + "<td>" + e.getFirstName() + "</td>" 
+                + "<td>" + e.getLastName() + "</td>"
+                + "<td>" + e.getStartDate() + "</td>"
+                + "<td>" + e.getEndDate() + "</td>"
+                + "<td>" + e.getContactNumber() + "</td>"
+                + "<td>" + e.getContractType() + "</td>"
+                + "<td>" + e.getContractedHours() + "</td>"
+                + "</tr>");
+}
+
+
+%>
+
 </table>
 <br>
 <br>
