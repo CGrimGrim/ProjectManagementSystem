@@ -71,7 +71,6 @@
             <param-name>connectionString</param-name>
             <param-value>jdbc:mysql://localhost:3306/pmsleeds</param-value>  
        </init-param>
-        </init-param>
           <init-param>
             <param-name>username</param-name>
             <param-value>root</param-value>  
@@ -114,12 +113,11 @@
        <url-pattern>/addProject</url-pattern>
    </servlet-mapping>
    <servlet-mapping>
-<<<<<<< HEAD
        <servlet-name>GetAllStaffController</servlet-name>
        <url-pattern>/allStaff</url-pattern>
-=======
+    </servlet-mapping>
+    <servlet-mapping>
        <servlet-name>DeleteProjectController</servlet-name>
        <url-pattern>/deleteProject</url-pattern>
->>>>>>> 1b514216901df361493a367b00894599effe32ae
    </servlet-mapping>
  </web-app>

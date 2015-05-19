@@ -38,8 +38,8 @@ public class DataLink {
     	callstat = connect.prepareCall("call addProject(?,?,?,?,?,?,?)");
     	callstat.setInt(1, p.getProjectID());
     	callstat.setString(2, p.getName());
-    	callstat.setInt(3, p.getTotalHours());
-    	callstat.setString(4, p.getLocationID());
+    	callstat.setDouble(3, p.getTotalHours());
+    	callstat.setInt(4, p.getLocationID());
     	callstat.setString(5, p.getPhase());
     	callstat.setDate(6, Date.valueOf(p.getStartDate()));
     	callstat.setDate(7, Date.valueOf(p.getEndDate()));

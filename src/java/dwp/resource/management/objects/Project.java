@@ -17,6 +17,7 @@ public class Project {
     private String name;
     private double totalHours;
     private String locationName;
+    private int locationID;
     private String phase;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -107,5 +108,19 @@ public class Project {
 
     public LocalDate getEndDate() {
         return endDate;
+    }
+
+    /**
+     * @return the locationID
+     */
+    public int getLocationID() {
+        return locationID;
+    }
+
+    /**
+     * @param locationID the locationID to set
+     */
+    public void setLocationID(int locationID) {
+        this.locationID = locationID;
     }
 }
